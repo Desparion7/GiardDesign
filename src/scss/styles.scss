@@ -1,0 +1,29 @@
+@import '~bootstrap/scss/bootstrap';
+@import 'animation.scss';
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--main-color: #1b5b31;
+}
+
+body {
+	background-color: #f5f0ec;
+}
+header {
+	background-color: white;
+}
+// NAV
+.nav-link {
+	color: black;
+}
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.show {
+	color: var(--main-color);
+}
+.searchForm {
+	display: none;
+}

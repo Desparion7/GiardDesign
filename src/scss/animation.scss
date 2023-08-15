@@ -1,0 +1,14 @@
+.slide-down {
+	animation: slide-down 1s linear;
+}
+
+@keyframes slide-down {
+	from {
+		opacity: 0;
+		max-height: 0;
+	}
+	to {
+		opacity: 1;
+		max-height: 1000px;
+	}
+}
