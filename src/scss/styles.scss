@@ -1,16 +1,13 @@
-@import '~bootstrap/scss/bootstrap';
-@import 'animation.scss';
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+@import 'bootstrap/scss/bootstrap';
+@import './animation.scss';
+
 :root {
 	--main-color: #1b5b31;
 }
 
 body {
 	background-color: #f5f0ec;
+	font-family: 'Inter', sans-serif;
 }
 header {
 	background-color: white;
@@ -26,4 +23,8 @@ header {
 }
 .searchForm {
 	display: none;
+}
+.intro-slide span {
+	color: var(--main-color);
+	font-size: 0.75rem;
 }
