@@ -1,6 +1,10 @@
 .slide-down {
 	animation: slide-down 1s linear;
 }
+.slide-left {
+	-webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
 
 @keyframes slide-down {
 	from {
@@ -8,5 +12,25 @@
 	}
 	to {
 		max-height: 1000px;
+	}
+}
+@-webkit-keyframes slide-left {
+	0% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+	100% {
+		-webkit-transform: translateX(-100px);
+		transform: translateX(-100px);
+	}
+}
+@keyframes slide-left {
+	0% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+	100% {
+		-webkit-transform: translateX(-100px);
+		transform: translateX(-100px);
 	}
 }
