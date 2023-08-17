@@ -7,6 +7,9 @@ export default {
 			'~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
 		},
 	},
+	build: {
+		outDir: '../dist',
+	},
 	server: {
 		port: 8080,
 		hot: true,
