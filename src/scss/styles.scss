@@ -63,29 +63,17 @@ header {
 .searchForm {
 	display: none;
 }
-.describe span {
-	color: var(--main-color);
-	font-size: 0.75rem;
-}
 // SLIDE
 .slide {
 	background-color: var(--background-second);
-}
-.slide,
-.company {
 	min-height: 40vh;
+	h2 {
+		font-size: 1.2rem;
+	}
+	p {
+		font-size: 0.8rem;
+	}
 }
-.slide h2,
-.company h2 {
-	font-size: 1.2rem;
-	// text-align: center;
-}
-.slide p,
-.company p {
-	font-size: 0.8rem;
-	// text-align: center;
-}
-
 .slide-img {
 	right: 0;
 	top: 0;
@@ -110,8 +98,29 @@ header {
 	border: none;
 }
 // CARDS
+.describe {
+	span {
+		color: var(--main-color);
+		font-size: 0.75rem;
+	}
+	h2 {
+		font-size: 1.2rem;
+	}
+	p {
+		font-size: 0.9rem;
+	}
+}
 .cards-card {
 	background-color: white;
+	h3 {
+		font-size: 1.1rem;
+	}
+	p {
+		font-size: 0.9rem;
+	}
+	a {
+		font-size: 0.8rem;
+	}
 }
 .cards-card-img {
 	height: 44px;
@@ -128,6 +137,18 @@ header {
 	background-color: var(--main-color);
 	color: white;
 }
+.company {
+	min-height: 40vh;
+	span {
+		font-size: 0.8rem;
+	}
+	h3 {
+		font-size: 1.1rem;
+	}
+	p {
+		font-size: 0.9rem;
+	}
+}
 .company-description {
 	justify-content: space-between;
 }
@@ -141,7 +162,22 @@ header {
 	width: 100%;
 	height: 100%;
 }
-
+// Realization
+.realization {
+	min-height: 100vh;
+	background-color: var(--background-second);
+	span {
+		color: var(--main-color);
+		font-size: 0.8rem;
+	}
+	h3 {
+		font-size: 1.1rem;
+		margin-bottom: 3rem;
+	}
+	p {
+		font-size: 0.9rem;
+	}
+}
 @media screen and (min-width: 768px) {
 	.custom-btn {
 		font-size: 1rem;
@@ -150,16 +186,29 @@ header {
 	.custom-btn i {
 		font-size: 1rem;
 	}
-	.slide,
-	.company {
+	.slide {
 		min-height: 50vh;
+		h2 {
+			font-size: 2rem;
+		}
+		p {
+			font-size: 1rem;
+		}
 	}
-	.slide h2 {
-		font-size: 2rem;
+	.describe,
+	.company,
+	.realization {
+		span {
+			font-size: 0.9rem;
+		}
+		h3 {
+			font-size: 1.8rem;
+		}
+		p {
+			font-size: 1rem;
+		}
 	}
-	.slide p {
-		font-size: 1rem;
-	}
+
 	.slide-img {
 		position: absolute;
 	}
@@ -178,29 +227,47 @@ header {
 	.custom-btn i {
 		font-size: 1.5rem;
 	}
-	.slide,
-	.company {
+	.slide {
 		min-height: 60vh;
+		h2 {
+			font-size: 4rem;
+			text-align: start;
+		}
+		p {
+			font-size: 1.1rem;
+			text-align: start;
+		}
 	}
-	.slide h2,
-	.company h2 {
-		font-size: 4rem;
-		text-align: start;
-	}
-	.slide p,
-	.company p {
-		font-size: 1.1rem;
-		text-align: start;
+	.describe,
+	.company,
+	.realization {
+		span {
+			font-size: 1rem;
+		}
+		h3 {
+			font-size: 3rem;
+		}
+		p {
+			font-size: 1.1rem;
+		}
 	}
 }
+
 @media screen and (min-width: 1200px) {
-	.slide,
-	.company {
+	.slide {
 		min-height: 70vh;
+		h2 {
+			font-size: 5rem;
+		}
 	}
-	.slide h2 {
-		font-size: 5rem;
+	.describe,
+	.company,
+	.realization {
+		h3 {
+			font-size: 4rem;
+		}
 	}
+
 	.slideBtnBox {
 		font-size: 3rem;
 		padding: 1rem 2rem;
