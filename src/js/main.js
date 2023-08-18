@@ -10,7 +10,7 @@ window.onload = () => {
 	const gradient = document.querySelector('.gradient');
 	const galleryBtn = document.querySelector('.realization-btnBox');
 	const grid = document.querySelector('.grid');
-	const photosIncrement = 3;
+	const photosIncrement = 5;
 	let photoNumber = 7;
 
 	// toggle searchForm

@@ -5,6 +5,7 @@
 	--main-color: #1b5b31;
 	--background-first: #dcc1ab;
 	--background-second: #f5f0ec;
+	--background-third: #111111;
 }
 
 body {
@@ -14,6 +15,15 @@ body {
 header {
 	background-color: white;
 }
+footer {
+	background-color: var(--background-third);
+	color: white;
+	a {
+		text-decoration: none;
+		color: white;
+	}
+}
+// BUTTONS
 .custom-btn {
 	font-size: 0.8rem;
 	padding: 0.3rem 0.6rem;
@@ -58,6 +68,13 @@ header {
 }
 .transparentBlackBtn:hover {
 	background-color: #e1b897;
+}
+.whiteBtn {
+	background-color: white;
+	color: var(--main-color);
+}
+.whiteBtn:hover {
+	background-color: rgb(187, 187, 187);
 }
 // NAV
 .nav-link {
@@ -106,8 +123,15 @@ header {
 	border: none;
 }
 // OFFERTS
-.offert {
+.offert1,
+.offert2 {
 	background-color: var(--background-second);
+}
+.offert1 {
+	padding-top: 4rem;
+}
+.offert2 {
+	padding-bottom: 6rem;
 }
 // CARDS
 .describe {
@@ -142,9 +166,9 @@ header {
 	color: var(--main-color);
 }
 .cards-card-bottom a:hover {
-	color: #71c88f;
+	color: #5ec281;
 }
-// Company
+// COMPANY
 .company {
 	background-color: var(--main-color);
 	color: white;
@@ -174,7 +198,7 @@ header {
 	width: 100%;
 	height: 100%;
 }
-// Realization
+// REALIZATION/GALLERY
 .realization {
 	min-height: 100%;
 	background-color: var(--background-first);
@@ -227,6 +251,33 @@ header {
 		rgba(214, 183, 158, 0) 100%
 	);
 }
+// INSTAGRAM
+.instagram {
+	background-color: var(--background-second);
+	color: white;
+	padding: 3rem 6rem;
+	h3 {
+		font-size: 3rem;
+	}
+	p {
+		font-size: 1.1rem;
+	}
+}
+.instagramBox {
+	padding: 8rem;
+	gap: 3rem;
+	background-color: var(--main-color);
+}
+// FOOTER
+.line {
+	background-color: white;
+	width: 100%;
+	height: 1px;
+}
+.copyright {
+	margin-top: 6rem;
+}
+// MEDIA
 @media screen and (min-width: 576px) {
 	.grid-item {
 		width: calc(50% - 10px);
