@@ -3,13 +3,12 @@
 
 :root {
 	--main-color: #1b5b31;
-	--background-first: #f5f0ec;
-	--background-second: #dcc1ab;
+	--background-first: #dcc1ab;
+	--background-second: #f5f0ec;
 }
 
 body {
 	background-color: var(--background-first);
-	// background-color: black;
 	font-family: 'Inter', sans-serif;
 }
 header {
@@ -21,10 +20,10 @@ header {
 	border: none;
 	border-radius: 20px;
 	transition: background-color 0.3s, color 0.3s;
-}
-.custom-btn i {
-	font-size: 0.8rem;
-	margin-left: 0.5rem;
+	i {
+		font-size: 0.8rem;
+		margin-left: 0.5rem;
+	}
 }
 .grrenBtn {
 	background-color: var(--main-color);
@@ -51,6 +50,15 @@ header {
 	background-color: #278046;
 	color: white;
 }
+.transparentBlackBtn {
+	background-color: transparent;
+	color: black;
+	border: 1px solid black;
+	z-index: 10;
+}
+.transparentBlackBtn:hover {
+	background-color: #e1b897;
+}
 // NAV
 .nav-link {
 	color: black;
@@ -65,7 +73,7 @@ header {
 }
 // SLIDE
 .slide {
-	background-color: var(--background-second);
+	background-color: var(--background-first);
 	min-height: 40vh;
 	h2 {
 		font-size: 1.2rem;
@@ -96,6 +104,10 @@ header {
 }
 .slideBtnBox button {
 	border: none;
+}
+// OFFERTS
+.offert {
+	background-color: var(--background-second);
 }
 // CARDS
 .describe {
@@ -164,8 +176,8 @@ header {
 }
 // Realization
 .realization {
-	min-height: 100vh;
-	background-color: var(--background-second);
+	min-height: 100%;
+	background-color: var(--background-first);
 	span {
 		color: var(--main-color);
 		font-size: 0.8rem;
@@ -178,6 +190,49 @@ header {
 		font-size: 0.9rem;
 	}
 }
+.realization-btnBox {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+.grid {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.grid-item {
+	width: 100%;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+}
+
+.grid-item img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.gradient {
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	bottom: 0;
+	background: linear-gradient(
+		360deg,
+		#dcc1ab 0%,
+		rgba(214, 183, 158, 0) 100%
+	);
+}
+@media screen and (min-width: 576px) {
+	.grid-item {
+		width: calc(50% - 10px);
+	}
+}
+
 @media screen and (min-width: 768px) {
 	.custom-btn {
 		font-size: 1rem;
@@ -250,6 +305,9 @@ header {
 		p {
 			font-size: 1.1rem;
 		}
+	}
+	.grid-item {
+		width: calc(33.33% - 10px);
 	}
 }
 
