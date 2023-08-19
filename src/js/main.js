@@ -12,6 +12,15 @@ window.onload = () => {
 	const grid = document.querySelector('.grid');
 	const photosIncrement = 5;
 	let photoNumber = 7;
+	// popup
+	let currentIndex = 0;
+	let galleryItems = document.querySelectorAll('.grid-item');
+	const popupContainer = document.querySelector('.popup-container');
+	const popupBackdrop = document.querySelector('.popup-backdrop');
+	const popupImage = document.querySelector('.popup-image');
+	const popupCloseBtn = document.querySelector('.popupCloseBtn');
+	const popupNextBtn = document.querySelector('.popupNextBtn');
+	const popupPrevBtn = document.querySelector('.popupPrevBtn');
 
 	// toggle searchForm
 	searchBtn.addEventListener('click', () => {
@@ -47,6 +56,7 @@ window.onload = () => {
 			divElement.className = 'grid-item';
 			const imgElement = document.createElement('img');
 			imgElement.src = `./assets/g${photoNumber}.png`;
+			imgElement.setAttribute('data-index', `${photoNumber}`);
 			imgElement.alt = 'projekt';
 			divElement.appendChild(imgElement);
 			grid.appendChild(divElement);
@@ -63,5 +73,95 @@ window.onload = () => {
 		setTimeout(() => {
 			masonry.layout();
 		}, 50);
+		// refresh img for popup
+		galleryItems = document.querySelectorAll('.grid-item');
+		addListenersForPhoto();
 	});
+
+	// POPUP
+	const addListenersForPhoto = () => {
+		galleryItems.forEach((item, index) => {
+			if (!item.hasEventListener) {
+				const clickHandler = () => {
+					currentIndex = index;
+					const imageSrc = item.querySelector('img').src;
+					const imageName = imageSrc.split('/').pop();
+					const imageNameParts = imageName.split('.');
+					const newImageName = `${imageNameParts[0]}-big.${imageNameParts[1]}`;
+					const newImageSrc = imageSrc.replace(
+						imageName,
+						newImageName
+					);
+					popupImage.src = newImageSrc;
+					popupContainer.style.display = 'flex';
+				};
+
+				item.addEventListener('click', clickHandler);
+				item.hasEventListener = true;
+			}
+		});
+	};
+
+	const showNextImage = () => {
+		currentIndex = (currentIndex + 1) % galleryItems.length;
+		const nextImageSrc =
+			galleryItems[currentIndex].querySelector('img').src;
+		const imageName = nextImageSrc.split('/').pop();
+		const imageNameParts = imageName.split('.');
+		const newImageName = `${imageNameParts[0]}-big.${imageNameParts[1]}`;
+		const newImageSrc = nextImageSrc.replace(imageName, newImageName);
+		popupImage.src = newImageSrc;
+	};
+
+	const showPrevImage = () => {
+		currentIndex =
+			(currentIndex - 1 + galleryItems.length) % galleryItems.length;
+		const prevImageSrc =
+			galleryItems[currentIndex].querySelector('img').src;
+		const imageName = prevImageSrc.split('/').pop();
+		const imageNameParts = imageName.split('.');
+		const newImageName = `${imageNameParts[0]}-big.${imageNameParts[1]}`;
+		const newImageSrc = prevImageSrc.replace(imageName, newImageName);
+		popupImage.src = newImageSrc;
+	};
+
+	// close popup
+	popupBackdrop.addEventListener('click', () => {
+		popupContainer.style.display = 'none';
+	});
+	popupCloseBtn.addEventListener('click', () => {
+		popupContainer.style.display = 'none';
+	});
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape') {
+			popupContainer.style.display = 'none';
+		}
+	});
+
+	// change img
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'ArrowRight') {
+			showNextImage();
+		}
+	});
+	popupNextBtn.addEventListener('click', () => {
+		showNextImage();
+	});
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'ArrowLeft') {
+			showPrevImage();
+		}
+	});
+	popupPrevBtn.addEventListener('click', () => {
+		showPrevImage();
+	});
+	// change img for mobile
+	popupContainer.addEventListener('swiped-left', () => {
+		showNextImage();
+	});
+	popupContainer.addEventListener('swiped-right', () => {
+		showPrevImage();
+	});
+
+	addListenersForPhoto();
 };
