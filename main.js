@@ -171,13 +171,6 @@ window.onload = () => {
 	popupPrevBtn.addEventListener('click', () => {
 		showPrevImage();
 	});
-	// change img for mobile
-	popupContainer.addEventListener('swiped-left', () => {
-		showNextImage();
-	});
-	popupContainer.addEventListener('swiped-right', () => {
-		showPrevImage();
-	});
 
 	addListenersForPhoto();
 };
