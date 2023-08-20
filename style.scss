@@ -287,7 +287,6 @@ footer {
 	position: relative;
 	width: 90%;
 	height: 90%;
-	// overflow: hidden;
 }
 
 .popup-image {
@@ -295,6 +294,7 @@ footer {
 	width: 100%;
 	object-fit: contain;
 }
+
 .popupNextBtn,
 .popupPrevBtn,
 .popupCloseBtn {
@@ -303,6 +303,15 @@ footer {
 	background-color: transparent;
 	border: none;
 	color: white;
+	i {
+		background-color: rgba(245, 245, 245, 0.169);
+		padding: 0.2rem;
+		border-radius: 25%;
+		transition: background-color 0.3s;
+	}
+	i:hover {
+		background-color: rgba(246, 246, 246, 0.259);
+	}
 }
 .popupCloseBtn {
 	top: 2rem;

@@ -108,7 +108,11 @@ window.onload = () => {
 						imageName,
 						newImageName
 					);
-					popupImage.src = newImageSrc;
+					if (window.innerWidth > 768) {
+						popupImage.src = newImageSrc;
+					} else {
+						popupImage.src = imageSrc;
+					}
 					popupContainer.style.display = 'flex';
 				};
 
@@ -126,7 +130,11 @@ window.onload = () => {
 		const imageNameParts = imageName.split('.');
 		const newImageName = `${imageNameParts[0]}-big.${imageNameParts[1]}`;
 		const newImageSrc = nextImageSrc.replace(imageName, newImageName);
-		popupImage.src = newImageSrc;
+		if (window.innerWidth > 768) {
+			popupImage.src = newImageSrc;
+		} else {
+			popupImage.src = nextImageSrc;
+		}
 	};
 
 	const showPrevImage = () => {
@@ -138,7 +146,11 @@ window.onload = () => {
 		const imageNameParts = imageName.split('.');
 		const newImageName = `${imageNameParts[0]}-big.${imageNameParts[1]}`;
 		const newImageSrc = prevImageSrc.replace(imageName, newImageName);
-		popupImage.src = newImageSrc;
+		if (window.innerWidth > 768) {
+			popupImage.src = newImageSrc;
+		} else {
+			popupImage.src = prevImageSrc;
+		}
 	};
 
 	// close popup
