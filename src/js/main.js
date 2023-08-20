@@ -56,7 +56,6 @@ window.onload = () => {
 			divElement.className = 'grid-item';
 			const imgElement = document.createElement('img');
 			imgElement.src = `./assets/g${photoNumber}.png`;
-			imgElement.setAttribute('data-index', `${photoNumber}`);
 			imgElement.alt = 'projekt';
 			divElement.appendChild(imgElement);
 			grid.appendChild(divElement);
