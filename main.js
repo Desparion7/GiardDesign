@@ -31,7 +31,7 @@ window.onload = () => {
 			navSearch.style.display = 'none';
 		}
 	});
-	Animation;
+	// Animation;
 	const cards = document.querySelectorAll('.cards-card');
 	const options = {
 		root: null,
