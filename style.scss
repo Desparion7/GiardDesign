@@ -143,6 +143,7 @@ footer {
 		font-size: 0.9rem;
 	}
 }
+
 .cards-card {
 	background-color: white;
 	h3 {
@@ -154,6 +155,13 @@ footer {
 	a {
 		font-size: 0.8rem;
 	}
+	opacity: 0;
+	transform: rotateX(180deg);
+	transition: opacity 0.5s, transform 0.5s;
+}
+.visible {
+	opacity: 1;
+	transform: rotateX(0);
 }
 .cards-card-img {
 	height: 44px;
@@ -485,5 +493,16 @@ footer {
 	}
 	to {
 		max-height: 1000px;
+	}
+}
+.slide-right {
+	animation: slide-right 0.5s ease-out;
+}
+@keyframes slide-right {
+	from {
+		transform: translateX(-1000px);
+	}
+	to {
+		transform: translateX(0);
 	}
 }

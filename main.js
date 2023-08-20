@@ -1,5 +1,4 @@
-
-import './style.scss'
+import './style.scss';
 import Masonry from 'masonry-layout';
 // Nav
 window.onload = () => {
@@ -32,6 +31,25 @@ window.onload = () => {
 			navSearch.style.display = 'none';
 		}
 	});
+	Animation;
+	const cards = document.querySelectorAll('.cards-card');
+	const options = {
+		root: null,
+		rootMargin: '0px',
+		threshold: 0.5, // Trigger when 50% of the element is visible
+	};
+	const observer = new IntersectionObserver((entries, observer) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('visible');
+				observer.unobserve(entry.target); // Stop observing once animation is triggered
+			}
+		});
+	}, options);
+	cards.forEach((card) => {
+		observer.observe(card);
+	});
+
 	burgerBtn.addEventListener('click', () => {
 		if (navSearch.style.display === 'flex') {
 			navSearch.style.display = 'none';
