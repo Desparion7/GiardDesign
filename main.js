@@ -88,7 +88,7 @@ window.onload = () => {
 		createDiv();
 		setTimeout(() => {
 			masonry.layout();
-		}, 50);
+		}, 200);
 		// refresh img for popup
 		galleryItems = document.querySelectorAll('.grid-item');
 		addListenersForPhoto();
